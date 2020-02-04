@@ -62,7 +62,8 @@ to lay-baits
          [
            set bait-present false
            set color white
-           if baits-are-toxic = true 
+           let shy (random-float 1 < propn-shy)
+           if (baits-are-toxic = true and (not shy or (random-float 1 < propn-shy-die-if-exposed))) ; let one die if the bait is toxic and fox is bold, or forx is shy but has bad luck and gets poisoned anyway
            [ 
              ask one-of at-risk-family 
              [ ;type who print " died"

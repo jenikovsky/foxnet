@@ -708,13 +708,13 @@ to Glenelg-model
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
-810
+816
 70
-1018
-279
+1199
+454
 -1
 -1
-1.0
+8.523
 1
 10
 1
@@ -725,9 +725,9 @@ GRAPHICS-WINDOW
 0
 1
 0
-199
+43
 0
-199
+43
 0
 0
 1
@@ -844,7 +844,7 @@ initial-fox-density
 initial-fox-density
 0
 8
-0.5
+2.5
 0.5
 1
 /km2
@@ -859,7 +859,7 @@ bait-density
 bait-density
 0
 5
-0.0
+5.0
 0.5
 1
 /km2
@@ -874,7 +874,7 @@ Pr-die-if-exposed-100ha
 Pr-die-if-exposed-100ha
 0
 1
-0.0
+0.1
 0.05
 1
 NIL
@@ -888,7 +888,7 @@ CHOOSER
 bait-layout
 bait-layout
 "none" "grid" "random-scatter" "custom"
-0
+1
 
 TEXTBOX
 405
@@ -926,7 +926,7 @@ INPUTBOX
 395
 310
 kernel-percent
-[95]
+[100]
 1
 0
 String (reporter)
@@ -937,7 +937,7 @@ INPUTBOX
 395
 245
 home-range-area
-[0.454]
+[2]
 1
 0
 String (reporter)
@@ -950,7 +950,7 @@ CHOOSER
 weeks-per-timestep
 weeks-per-timestep
 1 2 4
-0
+2
 
 CHOOSER
 405
@@ -1028,7 +1028,7 @@ landscape-size
 landscape-size
 10
 12000
-400.0
+20.0
 5
 1
 km2
@@ -1392,7 +1392,7 @@ region-size
 region-size
 10
 6000
-110.0
+10.0
 10
 1
 km2
@@ -1492,7 +1492,7 @@ INPUTBOX
 410
 70
 working-directory
-C:/Users/hradskyb/FoxControlPatrol/Dropbox/personal/bron/ibm/foxnet
+/Users/jenikovsky/Work/CEC/FoxNet/foxnet
 1
 0
 String
@@ -1754,7 +1754,7 @@ SWITCH
 413
 age-structure
 age-structure
-1
+0
 1
 -1000
 
@@ -1842,7 +1842,7 @@ SWITCH
 448
 bait-consumption
 bait-consumption
-1
+0
 1
 -1000
 
@@ -2005,6 +2005,46 @@ annual-baseline-cost
 1
 0
 Number
+
+TEXTBOX
+815
+500
+965
+518
+Fox behaviour
+13
+64.0
+1
+
+SLIDER
+810
+520
+1040
+553
+propn-shy
+propn-shy
+0
+1
+0.9
+0.01
+1
+propn
+HORIZONTAL
+
+SLIDER
+810
+555
+1040
+588
+propn-shy-die-if-exposed
+propn-shy-die-if-exposed
+0
+1
+0.2
+0.01
+1
+propn
+HORIZONTAL
 
 @#$#@#$#@
 ## WHAT IS IT?
@@ -2348,7 +2388,7 @@ false
 Polygon -7500403 true true 270 75 225 30 30 225 75 270
 Polygon -7500403 true true 30 75 75 30 270 225 225 270
 @#$#@#$#@
-NetLogo 6.0.2
+NetLogo 6.1.1
 @#$#@#$#@
 @#$#@#$#@
 @#$#@#$#@
