@@ -98,8 +98,9 @@ to disperser-check-for-baits
         [
           move-to one-of poison
           ask bait-stations-here [set bait-present false set color white]
-         
-          ifelse baits-are-toxic = true 
+          
+          let shy (random-float 1 < propn-shy)
+          ifelse (baits-are-toxic = true and (not shy or (random-float 1 < propn-shy-die-if-exposed)))
           [ ; type " Disperser " type who print " ate a bait"
             die]
           [move-to this-cell]
