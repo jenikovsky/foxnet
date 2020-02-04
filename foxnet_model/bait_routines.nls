@@ -42,6 +42,8 @@ to lay-baits
 
  set count-baits-laid count bait-stations with [color = red]
  ; print count-baits-laid
+  
+ write-off-baits; bait lost to non-targeted species
  
  ifelse (year = commence-baiting-year and week-of-year >= commence-baiting-week) or (year > commence-baiting-year) 
    [set baits-are-toxic true ]
@@ -74,6 +76,15 @@ to lay-baits
      ]
    ]
      
+end
+
+
+to write-off-baits
+  ask bait-stations with [bait-present = true] [
+    if random-float 1 < bait-write-off [
+      set bait-present false
+    ]
+  ]  
 end
 
 

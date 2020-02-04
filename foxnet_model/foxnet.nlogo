@@ -710,11 +710,11 @@ end
 GRAPHICS-WINDOW
 816
 70
-1199
-454
+1024
+279
 -1
 -1
-8.523
+1.0
 1
 10
 1
@@ -725,9 +725,9 @@ GRAPHICS-WINDOW
 0
 1
 0
-43
+199
 0
-43
+199
 0
 0
 1
@@ -844,7 +844,7 @@ initial-fox-density
 initial-fox-density
 0
 8
-2.5
+1.0
 0.5
 1
 /km2
@@ -859,7 +859,7 @@ bait-density
 bait-density
 0
 5
-5.0
+4.0
 0.5
 1
 /km2
@@ -874,7 +874,7 @@ Pr-die-if-exposed-100ha
 Pr-die-if-exposed-100ha
 0
 1
-0.1
+1.0
 0.05
 1
 NIL
@@ -926,7 +926,7 @@ INPUTBOX
 395
 310
 kernel-percent
-[100]
+[95]
 1
 0
 String (reporter)
@@ -937,7 +937,7 @@ INPUTBOX
 395
 245
 home-range-area
-[2]
+[0.454]
 1
 0
 String (reporter)
@@ -950,7 +950,7 @@ CHOOSER
 weeks-per-timestep
 weeks-per-timestep
 1 2 4
-2
+0
 
 CHOOSER
 405
@@ -1028,7 +1028,7 @@ landscape-size
 landscape-size
 10
 12000
-20.0
+400.0
 5
 1
 km2
@@ -1392,7 +1392,7 @@ region-size
 region-size
 10
 6000
-10.0
+110.0
 10
 1
 km2
@@ -1754,7 +1754,7 @@ SWITCH
 413
 age-structure
 age-structure
-0
+1
 1
 -1000
 
@@ -1842,7 +1842,7 @@ SWITCH
 448
 bait-consumption
 bait-consumption
-0
+1
 1
 -1000
 
@@ -2007,43 +2007,58 @@ annual-baseline-cost
 Number
 
 TEXTBOX
-815
-500
-965
-518
-Fox behaviour
+820
+395
+970
+413
+Fork
 13
 64.0
 1
 
 SLIDER
-810
-520
-1040
-553
+815
+415
+1045
+448
 propn-shy
 propn-shy
+0
+1
+0.0
+0.01
+1
+propn.
+HORIZONTAL
+
+SLIDER
+815
+450
+1045
+483
+propn-shy-die-if-exposed
+propn-shy-die-if-exposed
 0
 1
 0.9
 0.01
 1
-propn
+propn.
 HORIZONTAL
 
 SLIDER
-810
-555
-1040
-588
-propn-shy-die-if-exposed
-propn-shy-die-if-exposed
+815
+485
+1045
+518
+bait-write-off
+bait-write-off
 0
 1
-0.2
+1.0
 0.01
 1
-propn
+propn.
 HORIZONTAL
 
 @#$#@#$#@
