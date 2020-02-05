@@ -15,7 +15,8 @@ to foxes-disperse; disperser routine for foxes
       make-first-dispersal-move; move a distance drawn from the appropriate exponential distribution
     ]
     
-    disperser-check-for-baits
+    if (not shy or random-float 1 < propn-shy-acts-bold) ; only bold, or shy but acting as bold will go for bait
+      [disperser-check-for-baits]
 
     check-for-alpha-vacancy ; look for nearby families that lack an alpha of the appropriate sex
     

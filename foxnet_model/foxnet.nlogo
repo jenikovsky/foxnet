@@ -2059,7 +2059,7 @@ bait-write-off
 bait-write-off
 0
 1
-0.0
+0.5
 0.01
 1
 propn.
