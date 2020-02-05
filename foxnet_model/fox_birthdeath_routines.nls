@@ -80,8 +80,12 @@ to fox-families-breed
         set natal-cell patch-here
                
         ifelse random-float 1 < propn-cubs-female ; set sex ratio of population
-        [set sex "female" set color yellow + 4 ]
-        [set sex "male" set color yellow]
+          [set sex "female" set color yellow + 4 ]
+          [set sex "male" set color yellow]
+      
+        ifelse random-float 1 < propn-shy ; set shy ratio of population
+          [set shy true]
+          [set shy false]
 
         set family-id [who] of myself
         set natal-id family-id

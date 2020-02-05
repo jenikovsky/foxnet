@@ -54,7 +54,7 @@ to lay-baits
  ask bait-stations with [bait-present = true and fox-family-owner != nobody]
    [
      let baited-family [family-members] of fox-family-owner
-     let at-risk-family baited-family with [age >= age-at-independence] 
+     let at-risk-family baited-family with [age >= age-at-independence and (not shy or random-float 1 < propn-shy-acts-bold)] ; get members of family at risk (independent and bold, or shy but acting as bold this time
      repeat count at-risk-family
      [
        ifelse bait-present = false
@@ -64,8 +64,7 @@ to lay-baits
          [
            set bait-present false
            set color white
-           let shy (random-float 1 < propn-shy)
-           if (baits-are-toxic = true and (not shy or (random-float 1 < propn-shy-die-if-exposed))) ; let one die if the bait is toxic and fox is bold, or forx is shy but has bad luck and gets poisoned anyway
+           if baits-are-toxic = true
            [ 
              ask one-of at-risk-family 
              [ ;type who print " died"
@@ -110,8 +109,7 @@ to disperser-check-for-baits
           move-to one-of poison
           ask bait-stations-here [set bait-present false set color white]
           
-          let shy (random-float 1 < propn-shy)
-          ifelse (baits-are-toxic = true and (not shy or (random-float 1 < propn-shy-die-if-exposed)))
+          ifelse baits-are-toxic = true
           [ ; type " Disperser " type who print " ate a bait"
             die]
           [move-to this-cell]

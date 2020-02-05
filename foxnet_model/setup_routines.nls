@@ -383,8 +383,13 @@ to set-up-foxes
     set size 6
     set age (36 + random 130 ) ; initial foxes are given an age between 9 months and 3 years
     ifelse random-float 1 < propn-cubs-female ; set sex ratio of population
-        [set sex "female" set color yellow + 4 ]
-        [set sex "male" set color yellow]
+      [set sex "female" set color yellow + 4 ]
+      [set sex "male" set color yellow]
+            
+    ifelse random-float 1 < propn-shy ; set shy ratio of population
+      [set shy true]
+      [set shy false]
+      
     set family-id nobody
     set natal-id nobody
     set failed-territory-id [0]

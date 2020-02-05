@@ -49,6 +49,7 @@ to habitat-fox-territory
     set size 6
     set age (36 + random 130 ) ; initial foxes are given an age between 9 months and 3 years
     set sex "female" set color yellow
+    set shy false
     set family-id nobody
     set natal-id nobody
     set failed-territory-id [0]
@@ -109,6 +110,7 @@ to bait-demo
         set size 6
         set age (36 + random 130 ) 
         set sex "female" set color yellow + 4
+        set shy false
         set family-id nobody
         set natal-id nobody
         set failed-territory-id [0]
@@ -129,9 +131,13 @@ to bait-demo
         set natal-cell patch-here
                
         ifelse random-float 1 < propn-cubs-female 
-        [set sex "female" set color yellow + 4 ]
-        [set sex "male" set color yellow]
+          [set sex "female" set color yellow + 4 ]
+          [set sex "male" set color yellow]
 
+        ifelse random-float 1 < propn-shy ; set shy ratio of population
+          [set shy true]
+          [set shy false]
+          
         set family-id [who] of myself
         set natal-id family-id
         set failed-territory-id [0]

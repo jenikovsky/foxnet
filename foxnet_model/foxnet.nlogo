@@ -216,6 +216,7 @@ foxes-own
   my-dispersal-duration; number of time-steps it took the fox to find a new territory
   collared
   failed-territory-id
+  shy; shy fox is less likely to eat the bait
 ]
 
 fox-families-own
@@ -404,6 +405,7 @@ to territory-demo
     set size 6
     set age (36 + random 130 ) ; initial foxes are given an age between 9 months and 3 years
     set sex "female" set color yellow + 4
+    set shy false
     set family-id nobody
     set natal-id nobody
     set failed-territory-id [0]
@@ -492,6 +494,7 @@ to territory-demo
     set size 6
     set age (36 + random 130 ) ; initial foxes are given an age between 9 months and 3 years
     set sex "female" set color yellow + 4
+    set shy false
     set family-id nobody
     set natal-id nobody
     set failed-territory-id [0]
@@ -518,6 +521,7 @@ to territory-demo
     set size 6
     set age (36 + random 130 ) ; initial foxes are given an age between 9 months and 3 years
     set sex "male" set color yellow
+    set shy false
     set family-id nobody
     set natal-id nobody
     set failed-territory-id [0]
@@ -844,7 +848,7 @@ initial-fox-density
 initial-fox-density
 0
 8
-1.0
+0.0
 0.5
 1
 /km2
@@ -859,7 +863,7 @@ bait-density
 bait-density
 0
 5
-4.0
+0.0
 0.5
 1
 /km2
@@ -874,7 +878,7 @@ Pr-die-if-exposed-100ha
 Pr-die-if-exposed-100ha
 0
 1
-1.0
+0.0
 0.05
 1
 NIL
@@ -888,7 +892,7 @@ CHOOSER
 bait-layout
 bait-layout
 "none" "grid" "random-scatter" "custom"
-1
+0
 
 TEXTBOX
 405
@@ -2025,7 +2029,7 @@ propn-shy
 propn-shy
 0
 1
-0.0
+0.5
 0.01
 1
 propn.
@@ -2034,13 +2038,13 @@ HORIZONTAL
 SLIDER
 815
 450
-1045
+1047
 483
-propn-shy-die-if-exposed
-propn-shy-die-if-exposed
+propn-shy-acts-bold
+propn-shy-acts-bold
 0
 1
-0.9
+0.5
 0.01
 1
 propn.
@@ -2055,7 +2059,7 @@ bait-write-off
 bait-write-off
 0
 1
-1.0
+0.0
 0.01
 1
 propn.
